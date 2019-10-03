@@ -54,3 +54,22 @@ def cost_fun(feature, label, max_cycle=1000, alpha=0.01):
             print("the error rate of number " + str(i) + " is " + str(err_rate(h, label)))
         w = w + alpha * feature.T * err  # update the weight  (using the decrease gradient)
     return w
+
+
+def predict(W, feature, filename):
+    '''
+    predict the test_data and get the class result
+    :param W: the weight after training
+    :param feature: the test feature
+    :param filename: the name of save result file
+    :return:
+    '''
+    n = np.shape(feature)[0]
+    f = open(filename, "w")
+    for i in range(n):
+        result = np.dot(feature[i], W)
+        if result > 0.5:
+            f.writelines(str(1) + "\n")
+        else:
+            f.writelines(str(0) + "\n")
+    f.close()
