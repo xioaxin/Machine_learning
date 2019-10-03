@@ -7,6 +7,12 @@ soft_max_Regression
 
 
 def cost(err, label):
+    '''
+    cost function
+    :param err:
+    :param label:
+    :return:
+    '''
     m = np.shape(err)[0]
     sum_cost = 0.0
     for i in range(m):

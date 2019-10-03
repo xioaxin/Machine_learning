@@ -3,6 +3,11 @@ import numpy as np
 import random as rd
 
 def load_weight(filename):
+    '''
+    load the weight
+    :param filename:
+    :return:
+    '''
     f = open(filename, "r")
     lines = f.readlines()
     weight = []
@@ -31,6 +36,13 @@ def load_data(num, m):
 
 
 def predict(data, w, filename):
+    '''
+    class the data
+    :param data:
+    :param w:
+    :param filename:
+    :return:
+    '''
     n, m = np.shape(data)
     print(data)
     print(w)
